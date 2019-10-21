@@ -207,6 +207,8 @@ class Load:
         for root, subdirs, files in os.walk(image_dir):
             files.sort()
             for file in files:
+                if '.jpg' in file:
+                    file_names.append(os.path.join(root, file))
                 file_names.append(os.path.join(root, file))
         print("Number of files added: ", len(file_names))
 

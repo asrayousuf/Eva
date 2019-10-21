@@ -5,6 +5,8 @@ __pycache__/
 *__pycache__*
 **/__pycache__
 
+**/.DS_Store
+
 # C extensions
 *.so
 
@@ -117,6 +119,7 @@ venv.bak/
 
 # data
 data/*
+!data/ravdess/*.sh
 !data/README.md
 !data/ua_detrac/README.md
 !data/ua_detrac/*.sh
