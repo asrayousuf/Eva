@@ -117,6 +117,7 @@ venv.bak/
 
 # data
 data/*
+!data/ravdess/*.sh
 !data/README.md
 !data/ua_detrac/README.md
 !data/ua_detrac/*.sh
