@@ -118,7 +118,8 @@ venv.bak/
 *.pkl
 
 # data
-data/*
+# data/*
+data/ravdess/videos/*/*.mp4
 !data/ravdess/*.sh
 !data/README.md
 !data/ua_detrac/README.md
