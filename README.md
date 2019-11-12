@@ -6,9 +6,10 @@
 * Installation
 * Demos
 * Eva core
-* Eva storage 
-* Dataset 
-
+* Eva storage
+* Dataset
+* Bounding Box Extraction
+* Transfer Learning on Facebook's Detectron2
 
 ### Installation
 * Clone the repo
@@ -16,12 +17,12 @@
 
 
 ##### How to create the virtual environment
-* Install conda - we have prepared a yaml file that you can directly use with conda to install a virtual environment 
+* Install conda - we have prepared a yaml file that you can directly use with conda to install a virtual environment
 * Navigate to the eva repository in your local computer
 * conda env create -f environment.yml
 * Note, this yaml file should install and all code should run with no errors in Ubuntu 16.04.
    However, there are know installation issues with MacOS.
-    
+
 ### Demos
 We have demos for the following components:
 1. Eva analytics (pipeline for loading the dataset, training the filters, and outputting the optimal plan)
@@ -57,7 +58,7 @@ Eva core is consisted of
 * Loaders
 
 ##### Query Optimizer
-The query optimizer converts a given query to the optimal form. 
+The query optimizer converts a given query to the optimal form.
 
 All code related to this module is in */query_optimizer*
 
@@ -94,6 +95,10 @@ Currently a work in progress. Come check back later!
 ### Dataset
 __[Dataset info](data/README.md)__ explains detailed information about the  datasets
 
+### Bounding Box Extraction
 
+There were two bounding box extraction scripts that were created to extract bounding boxes of faces on the CK+ dataset and the RAVDESS dataset. They are ./face_detection/bbox_label_extract.py for the CK+ dataset and ./face_detection/bbox_label_extract_ravdess.py for the RAVDESS dataset. They result in a json with filenames as keys and labels and bounding boxes as values. The CK+ data is located at ./face_detection/cohn-kanade-images and the processed RAVDESS dataset can be acquired __[here](https://drive.google.com/open?id=1rI8VAdA3nAVCXs5U0sVCYHDZJG3mjzsv)__.
 
+### Transfer Learning on Facebook's Detectron2
 
+The training of the model is on Colab and can be accessed __[here](https://colab.research.google.com/drive/1CIeFUsSxXh1AbjaFp6Nz7-aWwN6Z-_fq)__.
