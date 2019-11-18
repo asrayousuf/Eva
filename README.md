@@ -14,6 +14,10 @@
 ### Installation
 * Clone the repo
 * Create a virtual environment with conda (explained in detail in the next subsection)
+* Run following command to configure git hooks 
+```shell
+git config core.hooksPath .githooks
+```
 
 
 ##### How to create the virtual environment
