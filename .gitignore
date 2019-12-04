@@ -125,3 +125,6 @@ data/ravdess/videos/*/*.mp4
 !data/ua_detrac/README.md
 !data/ua_detrac/*.sh
 
+
+# macos data
+*.DS_Store
