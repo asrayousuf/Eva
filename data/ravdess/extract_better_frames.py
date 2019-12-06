@@ -1,13 +1,23 @@
 import os
 import cv2
 
-eye_cascPath = 'haarcascade_eye_tree_eyeglasses.xml'
-face_cascPath = 'haarcascade_frontalface_alt.xml'
-faceCascade = cv2.CascadeClassifier(face_cascPath)
-eyeCascade = cv2.CascadeClassifier(eye_cascPath)
+faceCascade = cv2.CascadeClassifier('haarcascade_frontalface_alt.xml')
+eyeCascade = cv2.CascadeClassifier('haarcascade_eye_tree_eyeglasses.xml')
 
-def extractImagesWithoutBlink(pathIn):
-    cap = cv2.VideoCapture(pathIn)
+mapping = {
+    '01': '01.neutral',
+    '02': '02.calm',
+    '03': '03.happy',
+    '04': '04.sad',
+    '05': '05.angry',
+    '06': '06.fearful',
+    '07': '07.disgust',
+    '08': '08.surprised'
+}
+
+def extractImagesWithoutBlink(path, filename):
+    full_path = 'videos/' + path + '/'
+    cap = cv2.VideoCapture(full_path + filename)
     count = 0
     while True:
         cap.set(cv2.CAP_PROP_POS_MSEC,(count*1000))
@@ -32,11 +42,13 @@ def extractImagesWithoutBlink(pathIn):
                 minSize=(100, 100)
             )
             if len(eyes) > 0:
-                cv2.imwrite("{}-{}.jpg".format(pathIn[:-4], count), image)
+                cv2.imwrite('videos/' + path + '/' + "{}-{}.jpg".format(filename[:-4], count), image)
         count = count + 1
 
 if __name__=="__main__":
-    for filename in os.listdir('.'):
-        if filename.endswith('.mp4'):
-            extractImagesWithoutBlink(filename)
-            print('done extracting images for {}'.format(filename))
+    for folder in mapping.values():
+        for filename in os.listdir('videos/' + folder):
+            if filename.endswith('.mp4'):
+                extractImagesWithoutBlink(folder, filename)
+                print('done extracting images for {}'.format(filename))
+                os.remove('videos/' + folder + '/' + filename)

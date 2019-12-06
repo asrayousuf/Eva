@@ -12,8 +12,10 @@ mapping = {
     '08': '08.surprised'
 }
 
-for filename in os.listdir('.'):
+directory = 'videos'
+
+for filename in os.listdir(directory):
     if filename.endswith('.mp4'):
         file_arr = filename.split('-')
         emotion_tag = file_arr[2]
-        shutil.move(filename, mapping[emotion_tag])
+        shutil.move(directory + '/' + filename, directory + '/' + mapping[emotion_tag])
