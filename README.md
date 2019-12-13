@@ -105,4 +105,4 @@ There were two bounding box extraction scripts that were created to extract boun
 
 ### Transfer Learning on Facebook's Detectron2
 
-The training of the model is on Colab and can be accessed __[here](https://colab.research.google.com/drive/1CIeFUsSxXh1AbjaFp6Nz7-aWwN6Z-_fq)__.
+The training of the model is on Colab and can be accessed __[here](https://colab.research.google.com/drive/1CIeFUsSxXh1AbjaFp6Nz7-aWwN6Z-_fq)__. The testing of the model is also on Colab and can be accessed __[here](https://colab.research.google.com/drive/1lMYhU0JNWyyu7TGRM8gqa-6i0agMRFTY)__.
